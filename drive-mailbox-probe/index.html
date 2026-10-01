@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>drive-mailbox-probe</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="drive-mailbox-probe">drive-mailbox-probe</h1><p>drive-mailbox-probe is a private, owner-operated personal test application. One person, the owner, uses it to test how a personal software project can read a very small amount of metadata from that person's own Google Drive. It is not a product, is not offered to the public, and has no customers.</p><h2 id="what-it-is">What it is</h2><ul><li>A test tool run by its owner on the owner's own computer, for a limited period.</li><li>Its user set is very limited: one Google account, which belongs to the owner. No other person is expected to sign in or use it.</li><li>It has no public sign-up, no other accounts, and no advertising.</li><li>It is not affiliated with or endorsed by Google.</li></ul><h2 id="what-it-asks-google-for">What it asks Google for</h2><p>One permission, shown by Google as "See information about your Google Drive files" (<code>https://www.googleapis.com/auth/drive.metadata.readonly</code>). This permission does not allow reading the contents of any file, and does not allow changing, creating, sharing or deleting anything. The Privacy Policy explains what the permission technically allows and what this test actually does: <a href="https://leventen.net/drive-mailbox-probe/privacy/">https://leventen.net/drive-mailbox-probe/privacy/</a></p><h2 id="terms">Terms of Service</h2>
+<ol type="1"><li>drive-mailbox-probe is a personal test application provided by its owner for the owner's own use. It is not offered to any other person.</li><li>It is provided "as is", without warranty of any kind and without any commitment to support or availability.</li><li>The owner may change, suspend or delete the application, its credentials and its Google Cloud project at any time without notice. OAuth credentials and test fixtures are deleted promptly after the test and no later than 14 days after consent; the two service-account keys are deleted no later than 14 days after they were created (see the Privacy Policy, section 7).</li><li>If you are not the owner and you reach a Google consent screen for this application, do not approve it. Closing the screen is enough; nothing is accessed unless you approve.</li><li>Use of Google Drive and of your Google Account remains governed by Google's own terms; nothing here changes them.</li></ol><p>Contact: <a href="mailto:leventen@leventen.net">leventen@leventen.net</a> Last updated: 2026-10-01</p>
+</body>
+</html>
